@@ -5,14 +5,14 @@
             "message" : "Grupo adicionado com sucesso"
         },
 
-        "Bad" : {
+        "AlredyExists" : {
             "code" : 400,
             "message" : "Grupo já cadastrado"
         },
 
         "Validation" : {
             "code" : 440,
-            "message" : "Bad request message"
+            "message" : "Tipo de dado incorreto"
         } 
     },
 

@@ -1,15 +1,23 @@
-[
-    {
-    "GroupName" : "GrupoA"
-    },
+{   "CorrectData" : [
+        {
+        "GroupName" : "GrupoA"
+        },
+        {
+        "GroupName" : "GrupoB"
+        },
+        {
+        "GroupName" : "GrupoA111"
+        }
 
-    {
-    "GroupName" : 1
-    },
+    ],
 
-    {
-    "GroupName" : {"teste":"a"}
-    }
-    
+    "WrongData" : [
+        {
+        "GroupName" : 1
+        },
 
-]
+        {
+        "GroupName" : {"teste":"a"}
+        }
+    ]
+}
