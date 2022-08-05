@@ -1,5 +1,6 @@
 class Requests {
 
+/*  EXEMPLO PRA CONSULTA
     docTypeGenarator(docTypeList){
         let docs = docTypeList
         cy.readFile("cypress/fixtures/auth.json").then(file =>{
@@ -14,44 +15,65 @@ class Requests {
             cy.log(docType) 
             })
         })
-    }
+    } */
 
 
-
-    createGroupRequest(groupName,message,statusCode){
+    createGroupRequest(groupName,statusCode,message){
         cy.request({
             method: 'POST',
             url: "http://teste-qa-95b5bac5.octax.co:8003/group/"+ groupName,
-            failOnStatusCode: false,
-        }).then(function(response){
-            
-            expect(response.status.code).to.eq(statusCode)
-            expect(response.body.message).to.eq(message)
-            
+            failOnStatusCode: false
         })
-git*
+        .then(response => {
+           
+            expect(response.status).to.eq(statusCode)
+            expect(response.body.message).to.eq(message)
+
+        })
     }
 
     getGroupList(){
         cy.request({
+           
             method: 'GET',
             url: `http://teste-qa-95b5bac5.octax.co:8003/group/list`,
+       
         }).then(response => {
+            
             cy.writeFile('cypress/fixtures/groupList.json', response.body)
-            cy.readFile("cypress/fixtures/groupList.json").then(file =>{
-                cy.log(file[1])
-            })
+
+        })
+       
+   
+    }
+
+    deleteGroupRequest(groupName,statusCode,message){
+        cy.request({
+            method: 'DELETE',
+            url: `http://teste-qa-95b5bac5.octax.co:8003/group/${groupName}`,
+            failOnStatusCode: false,
+        })
+        .then(function(response){
+           
+            expect(response.status.code).to.eq(statusCode)
+            expect(response.body.message).to.eq(message)
+            
+        })
+    }
+    
+    cleanGroups(groupName){
+        cy.request({
+            method: 'DELETE',
+            url: `http://teste-qa-95b5bac5.octax.co:8003/group/${groupName}`,
+            failOnStatusCode: false
         })
     }
 
-    deleteGroupRequest(groupName){
-        cy.readFile("cypress/fixtures/groupList.json").then(file =>{
-            cy.request({
-                method: 'DELETE',
-                url: `http://teste-qa-95b5bac5.octax.co:8003/group/${groupName}`,
-            }).then(response => {
-                cy.log(response)
-                })
+    populateGroups(groupName){
+        cy.request({
+            method: 'POST',
+            url: "http://teste-qa-95b5bac5.octax.co:8003/group/"+ groupName,
+            failOnStatusCode: false
         })
     }
 }

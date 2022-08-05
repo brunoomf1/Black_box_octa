@@ -1,0 +1,36 @@
+{  
+    "createGroup" : {
+        "Successful": {
+            "code" : 200,
+            "message" : "Grupo adicionado com sucesso"
+        },
+
+        "Bad" : {
+            "code" : 400,
+            "message" : "Grupo já cadastrado"
+        },
+
+        "Validation" : {
+            "code" : 440,
+            "message" : "Bad request message"
+        } 
+    },
+
+    "deleteGroup" : {
+       " Successful": {
+            "code" : 200,
+            "message": "Grupo deletado"
+        },
+
+        "Bad":{
+            "code" : 400,
+            "message" : "Grupo não cadastrado"
+        },
+
+        "Validation": {
+            "code" : 440,
+            "message" : "Bad request message"
+        } 
+    }
+
+}

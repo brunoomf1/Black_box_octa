@@ -1,0 +1,15 @@
+[
+    {
+    "GroupName" : "GrupoA"
+    },
+
+    {
+    "GroupName" : 1
+    },
+
+    {
+    "GroupName" : {"teste":"a"}
+    }
+    
+
+]

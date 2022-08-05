@@ -1,12 +1,30 @@
-import Requests from "../support/Requests"
-import groups from "../fixtures/groups.json"
+import Requests from "../Requests/Requests"
+import groupsData from "../fixtures/Groups/groupsData.json"
+import requestStatus from "../fixtures/Groups/groupRequestStatus.json"
+describe('Criando grupos', () => {
 
+  it('Criar Grupos com sucesso',function() {
+    var status = requestStatus.createGroup.Successful
 
-describe('empty spec', () => {
-  it('passes', () => {
+    groupsData.forEach(function(group){
+      Requests.createGroupRequest(group.GroupName,status.code,status.message)
+    })
     
-    Requests.createGroupRequest(groups.group,"Grupo já cadastrado")
-    Requests.getGroupList()
-    Requests.deleteGroupRequest(groups.group)
+  })
+
+  it('Não é possivel criar grupos que já existem', function() {
+    var status = requestStatus.createGroup.Bad
+    groupsData.forEach(function(group){
+      Requests.createGroupRequest(group.GroupName,status.code,status.message)
+    })
+
+  })
+  
+})
+
+after(function(){
+  var groups = groupsData
+  groups.forEach(function(group){
+    Requests.cleanGroups(group.GroupName) 
   })
 })
