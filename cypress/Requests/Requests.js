@@ -53,7 +53,7 @@ class Requests {
             url: `http://teste-qa-95b5bac5.octax.co:8003/group/${groupName}`,
             failOnStatusCode: false,
         })
-        .then(function(response){
+        .then(response => {
            
             expect(response.status.code).to.eq(statusCode)
             expect(response.body.message).to.eq(message)
