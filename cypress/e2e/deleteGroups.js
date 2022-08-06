@@ -39,7 +39,6 @@ describe('Criação de grupos', () => {
 
         groupData.forEach(function(group){
             groupsRequests.deleteGroup(group.GroupName, status.code, status.message)
-
         })
 
     })
@@ -51,23 +50,7 @@ describe('Criação de grupos', () => {
         groupData.forEach(function(group){
           groupsRequests.createGroupRequest(group.GroupName,status.code,status.message)
         })
-
-    
     })
-      
-
-
-    afterEach(function(){
-        const groupData = groupsData.CorrectData
-
-        groupData.forEach(function(group){
-
-            groupsRequests.createGroup(group)
-
-        })
-
-    })
-
 
 })
 
