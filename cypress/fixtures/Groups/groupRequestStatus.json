@@ -22,7 +22,7 @@
             "message": "Grupo deletado"
         },
 
-        "Bad":{
+        "DontExist":{
             "code" : 400,
             "message" : "Grupo não cadastrado"
         },
