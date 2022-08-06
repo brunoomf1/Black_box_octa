@@ -31,6 +31,20 @@
             "code" : 440,
             "message" : "Bad request message"
         } 
-    }
+    },
+
+    "listGroup" : {
+        "Successful": {
+             "code" : 200
+         },
+ 
+         "DontExist":{
+             "code" : 400
+         },
+ 
+         "Validation": {
+             "code" : 440
+         } 
+     }
 
 }

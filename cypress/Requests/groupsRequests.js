@@ -7,20 +7,17 @@ class groupsRequests {
             failOnStatusCode: false
         })
         .then(response => {
-           cy.AssertRequsition(groupName,expectedResponse,response)
+            cy.AssertRequsition(expectedResponse,response)
         })
     }
 
-    getGroupList(){
+    getGroupList(expectedResponse){
         cy.request({
-           
             method: 'GET',
             url: `http://teste-qa-95b5bac5.octax.co:8003/group/list`,
-       
         }).then(response => {
-            
-            cy.writeFile('cypress/fixtures/groupList.json', response.body)
-
+            cy.AssertListRequsition(expectedResponse,response)
+            cy.writeFile('cypress/fixtures/groupListSave.json',response.body)
         })
        
     }
@@ -32,7 +29,7 @@ class groupsRequests {
             failOnStatusCode: false,
         })
         .then(response => {
-            cy.AssertRequsition(groupName,expectedResponse,response)
+            cy.AssertRequsition(expectedResponse,response)
          })
     }
     

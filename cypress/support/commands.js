@@ -25,17 +25,43 @@ Cypress.Commands.add('requestLog', (text) => {
 })
 
 
-Cypress.Commands.add('AssertRequsition', (groupName,expectedStatus,response) => {
+Cypress.Commands.add('AssertRequsition', (expectedStatus,response) => {
     
     const jsonMessage = response.body.message
 
     expect(response.status).to.eq(expectedStatus.code)
     expect(jsonMessage).to.eq(expectedStatus.message)
     
-    cy.requestLog(`${groupName} status: ${response.status} --- message ${JSON.stringify(jsonMessage)}`)
+    cy.requestLog(`status: ${response.status} --- message ${JSON.stringify(jsonMessage)}`)
 })
 
 
+Cypress.Commands.add('groupExistsInList', (expectedItem,assert) => {
+
+    cy.readFile('cypress/fixtures/groupListSave.json').then(groupListJson =>{
+        var groupListSave = []
+        groupListJson.forEach(function(i){
+            cy.log(i.group_name)
+            groupListSave.push(i.group_name)
+        })
+        
+        cy.log(groupListSave)
+        cy.log(expectedItem)
+     
+        var assertion = groupListSave.includes(`${expectedItem}`)
+        expect(assertion).to.eq(assert)
+     
+    })
+})
+
+
+Cypress.Commands.add('AssertListRequsition', (expectedStatus,response) => {
+    
+    expect(response.status).to.eq(expectedStatus.code)
+    expect(response.body).to.not.empty
+    
+    cy.requestLog(`status: ${response.status}`)
+})
 //
 //
 // -- This is a child command --

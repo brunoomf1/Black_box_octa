@@ -1,3 +1,5 @@
+/// <reference types="cypress" />
+
 import groupsRequests from "../Requests/groupsRequests"
 import groupsData from "../fixtures/Groups/groupsData.json"
 import requestStatus from "../fixtures/Groups/groupRequestStatus.json"
