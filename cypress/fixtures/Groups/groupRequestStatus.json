@@ -17,7 +17,7 @@
     },
 
     "deleteGroup" : {
-       " Successful": {
+       "Successful": {
             "code" : 200,
             "message": "Grupo deletado"
         },

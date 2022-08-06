@@ -1,16 +1,13 @@
 class groupsRequests {
 
-    createGroup(groupName,statusCode,message){
+    createGroup(groupName,expectedResponse){
         cy.request({
             method: 'POST',
             url: "http://teste-qa-95b5bac5.octax.co:8003/group/"+groupName,
             failOnStatusCode: false
         })
         .then(response => {
-           
-            expect(response.status).to.eq(statusCode)
-            expect(response.body.message).to.eq(message)
-
+           cy.AssertRequsition(groupName,expectedResponse,response)
         })
     }
 
@@ -28,19 +25,17 @@ class groupsRequests {
        
     }
 
-    deleteGroup(groupName,statusCode,message){
+    deleteGroup(groupName,expectedResponse){
         cy.request({
             method: 'DELETE',
             url: 'http://teste-qa-95b5bac5.octax.co:8003/group/'+groupName,
             failOnStatusCode: false,
         })
         .then(response => {
-           
-            expect(response.status.code).to.eq(statusCode)
-            expect(response.body.message).to.eq(message)
-            
-        })
+            cy.AssertRequsition(groupName,expectedResponse,response)
+         })
     }
+    
     
     cleanGroups(groupName){
         cy.request({

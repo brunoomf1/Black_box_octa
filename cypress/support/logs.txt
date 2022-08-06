@@ -1,0 +1,32 @@
+GrupoA status: 200 --- message "Grupo adicionado com sucesso" -- 2022-8-6 18:16:54 
+GrupoB status: 200 --- message "Grupo adicionado com sucesso" -- 2022-8-6 18:16:54 
+GrupoA111 status: 200 --- message "Grupo adicionado com sucesso" -- 2022-8-6 18:16:54 
+GrupoA status: 400 --- message "Grupo já cadastrado" -- 2022-8-6 18:16:55 
+GrupoB status: 400 --- message "Grupo já cadastrado" -- 2022-8-6 18:16:55 
+GrupoA111 status: 400 --- message "Grupo já cadastrado" -- 2022-8-6 18:16:56 
+GrupoA status: 200 --- message "Grupo adicionado com sucesso" -- 2022-8-6 18:18:48 
+GrupoB status: 200 --- message "Grupo adicionado com sucesso" -- 2022-8-6 18:18:49 
+GrupoA111 status: 200 --- message "Grupo adicionado com sucesso" -- 2022-8-6 18:18:49 
+GrupoA status: 400 --- message "Grupo já cadastrado" -- 2022-8-6 18:18:50 
+GrupoB status: 400 --- message "Grupo já cadastrado" -- 2022-8-6 18:18:50 
+GrupoA111 status: 400 --- message "Grupo já cadastrado" -- 2022-8-6 18:18:51 
+GrupoA status: 200 --- message "Grupo adicionado com sucesso" -- 2022-8-6 18:19:56 
+GrupoB status: 200 --- message "Grupo adicionado com sucesso" -- 2022-8-6 18:19:56 
+GrupoA111 status: 200 --- message "Grupo adicionado com sucesso" -- 2022-8-6 18:19:57 
+GrupoA status: 400 --- message "Grupo já cadastrado" -- 2022-8-6 18:19:57 
+GrupoB status: 400 --- message "Grupo já cadastrado" -- 2022-8-6 18:19:58 
+GrupoA111 status: 400 --- message "Grupo já cadastrado" -- 2022-8-6 18:19:58 
+undefined status: 400 --- message "Grupo não cadastrado" -- 2022-8-6 18:20:7 
+undefined status: 400 --- message "Grupo não cadastrado" -- 2022-8-6 18:22:47 
+undefined status: 400 --- message "Grupo não cadastrado" -- 2022-8-6 18:23:37 
+undefined status: 400 --- message "Grupo não cadastrado" -- 2022-8-6 18:24:6 
+undefined status: 400 --- message "Grupo não cadastrado" -- 2022-8-6 18:26:0 
+undefined status: 400 --- message "Grupo não cadastrado" -- 2022-8-6 18:27:17 
+GrupoA status: 200 --- message "Grupo deletado" -- 2022-8-6 18:29:40 
+GrupoB status: 200 --- message "Grupo deletado" -- 2022-8-6 18:29:41 
+GrupoA111 status: 200 --- message "Grupo deletado" -- 2022-8-6 18:29:43 
+undefined status: 400 --- message "Grupo não cadastrado" -- 2022-8-6 18:29:43 
+GrupoA status: 200 --- message "Grupo deletado" -- 2022-8-6 18:30:51 
+GrupoB status: 200 --- message "Grupo deletado" -- 2022-8-6 18:30:52 
+GrupoA111 status: 200 --- message "Grupo deletado" -- 2022-8-6 18:30:53 
+undefined status: 400 --- message "Grupo não cadastrado" -- 2022-8-6 18:30:54 

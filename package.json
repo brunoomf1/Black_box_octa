@@ -9,6 +9,7 @@
   "author": "Bruno M",
   "license": "MIT",
   "devDependencies": {
-    "cypress": "^10.4.0"
+    "cypress": "^10.4.0",
+    "cypress-mochawesome-reporter": "^3.2.0"
   }
 }
