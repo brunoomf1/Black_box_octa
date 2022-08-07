@@ -8,7 +8,7 @@ import requestStatus from "../fixtures/Groups/groupRequestStatus.json"
 describe("Group listing", function(){
 
 
-    it('[+] Correctly list the created groups', function(){
+    it('[+] Correctly list the created group', function(){
         const groupData = groupsData.CorrectData
         const expectedResponse = requestStatus.listGroup.Successful
 
@@ -24,7 +24,6 @@ describe("Group listing", function(){
         createdGroupsList.forEach(function(expectedItem){
              cy.groupExistsInList(expectedItem,true)
         })
-
     })
 
     it('[-] List a deleted group', function(){
