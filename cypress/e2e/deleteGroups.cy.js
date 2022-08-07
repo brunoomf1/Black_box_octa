@@ -1,6 +1,5 @@
 /// <reference types="cypress" />
 
-import groupsRequests from "../Requests/groupsRequests"
 import groupsData from "../fixtures/Groups/groupsData.json"
 import requestStatus from "../fixtures/Groups/groupRequestStatus.json"
 
@@ -13,11 +12,11 @@ describe('Criação de grupos', () => {
         const expectedResponse = requestStatus.deleteGroup.Successful
 
         groupData.forEach(function(group){
-            groupsRequests.populateGroups(group.GroupName)
+            cy.populateGroups(group.GroupName)
 
-            groupsRequests.deleteGroup(group.GroupName,expectedResponse)
+            cy.deleteGroup(group.GroupName,expectedResponse)
 
-            groupsRequests.cleanGroups(group.GroupName)
+            cy.cleanGroups(group.GroupName)
 
         })
 
@@ -27,7 +26,7 @@ describe('Criação de grupos', () => {
         const expectedResponse = requestStatus.deleteGroup.DontExist
         const groupData = "Groupo Teste"
         
-        groupsRequests.deleteGroup(groupData.GroupName,expectedResponse)
+        cy.deleteGroup(groupData.GroupName,expectedResponse)
 
     })
 
@@ -37,7 +36,7 @@ describe('Criação de grupos', () => {
         const groupData = groupsData.WrongData
 
         groupData.forEach(function(group){
-            groupsRequests.deleteGroup(group.GroupName,expectedResponse)
+            cy.deleteGroup(group.GroupName,expectedResponse)
         })
 
     })
@@ -45,7 +44,7 @@ describe('Criação de grupos', () => {
     it('[-] Deletar um Grupo com nome vazio',function() {
         const expectedResponse = requestStatus.deleteGroup.Validation
         const groupData = ""
-        groupsRequests.populateGroups(groupData,expectedResponse)
+        cy.populateGroups(groupData,expectedResponse)
         
     })
 

@@ -1,6 +1,5 @@
 /// <reference types="cypress" />
 
-import groupsRequests from "../Requests/groupsRequests"
 import groupsData from "../fixtures/Groups/groupsData.json"
 import requestStatus from "../fixtures/Groups/groupRequestStatus.json"
 
@@ -14,11 +13,11 @@ describe('Criação de grupos', () => {
     const expectedResponse = requestStatus.createGroup.Successful
 
     groupData.forEach(function(group){
-      groupsRequests.cleanGroups(group.GroupName) 
+      cy.cleanGroups(group.GroupName) 
     })
     
     groupData.forEach(function(group){
-      groupsRequests.createGroup(group.GroupName,expectedResponse)
+      cy.createGroup(group.GroupName,expectedResponse)
     })
   })
 
@@ -29,11 +28,11 @@ describe('Criação de grupos', () => {
     const groupData = groupsData.CorrectData
 
     groupData.forEach(function(group){
-      groupsRequests.createGroup(group.GroupName,expectedResponse)
+      cy.createGroup(group.GroupName,expectedResponse)
     })
 
     groupData.forEach(function(group){
-      groupsRequests.cleanGroups(group.GroupName) 
+      cy.cleanGroups(group.GroupName) 
     })
   })
 
@@ -43,7 +42,7 @@ describe('Criação de grupos', () => {
     const groupData = groupsData.WrongData
 
     groupData.forEach(function(group){
-      groupsRequests.createGroup(group.GroupName,expectedResponse)
+      cy.createGroup(group.GroupName,expectedResponse)
     })
   }) 
 
@@ -51,7 +50,7 @@ describe('Criação de grupos', () => {
     const expectedResponse = requestStatus.createGroup.Validation
     const groupData = ""
 
-    groupsRequests.createGroup(groupData,expectedResponse)
+    cy.createGroup(groupData,expectedResponse)
    
   })
 

@@ -8,9 +8,6 @@
 // https://on.cypress.io/custom-commands
 // ***********************************************
 //
-
-import groupsRequests from "../Requests/groupsRequests";
-
 //
 
 Cypress.Commands.add('dateTime', () => {
@@ -59,6 +56,7 @@ Cypress.Commands.add('groupExistsInList', (expectedItem,assert) => {
 })
 
 
+
 Cypress.Commands.add('AssertListRequsition', (expectedStatus,response) => {
     
     expect(response.status).to.eq(expectedStatus.code)
@@ -72,7 +70,7 @@ Cypress.Commands.add('deleteAllGroups', () => {
 
     cy.readFile('cypress/fixtures/groupListSave.json').then(groupListJson =>{
         groupListJson.forEach(function(group){
-            groupsRequests.cleanGroups(group)
+            cy.cleanGroups(group)
         })
      
     })

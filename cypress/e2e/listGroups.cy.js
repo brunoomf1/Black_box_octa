@@ -1,6 +1,5 @@
 /// <reference types="cypress" />
 
-import groupsRequests from "../Requests/groupsRequests"
 import groupsData from "../fixtures/Groups/groupsData.json"
 import requestStatus from "../fixtures/Groups/groupRequestStatus.json"
 
@@ -15,11 +14,11 @@ describe("Group listing", function(){
         var createdGroupsList = []
 
         groupData.forEach(function(group){
-            groupsRequests.populateGroups(group.GroupName)
+            cy.populateGroups(group.GroupName)
             createdGroupsList.push(group.GroupName)
         })
 
-        groupsRequests.getGroupList(expectedResponse)
+        cy.getGroupList(expectedResponse)
 
         createdGroupsList.forEach(function(expectedItem){
              cy.groupExistsInList(expectedItem,true)
@@ -33,10 +32,10 @@ describe("Group listing", function(){
 
         const group = 'Grupo Teste'
 
-        groupsRequests.populateGroups(group)
-        groupsRequests.cleanGroups(group)
+        cy.populateGroups(group)
+        cy.cleanGroups(group)
 
-        groupsRequests.getGroupList(expectedResponse)
+        cy.getGroupList(expectedResponse)
 
         cy.groupExistsInList(group,false)
 
@@ -47,10 +46,10 @@ describe("Group listing", function(){
 
         const expectedResponse = requestStatus.listGroup
         
-        groupsRequests.getGroupList(expectedResponse.Successful)
+        cy.getGroupList(expectedResponse.Successful)
         cy.deleteAllGroups()
 
-        groupsRequests.getGroupList(expectedResponse.DontExist)
+        cy.getGroupList(expectedResponse.DontExist)
 
 
 
