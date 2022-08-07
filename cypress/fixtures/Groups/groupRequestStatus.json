@@ -38,12 +38,8 @@
              "code" : 200
          },
  
-         "DontExist":{
+         "DontExist": {
              "code" : 400
-         },
- 
-         "Validation": {
-             "code" : 440
          } 
      }
 

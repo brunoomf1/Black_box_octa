@@ -27,13 +27,31 @@ describe("Group listing", function(){
     })
 
     it('[-] List a deleted group', function(){
-        return true
+
+        const groupData = groupsData.CorrectData
+        const expectedResponse = requestStatus.listGroup.DontExist
+
+        const group = 'Grupo Teste'
+
+        groupsRequests.populateGroups(group)
+        groupsRequests.cleanGroups(group)
+
+        groupsRequests.getGroupList(expectedResponse)
+
+        cy.groupExistsInList(group,false)
 
 
     })
 
     it('[-] List when there are no groups', function(){
-        return true
+
+        const expectedResponse = requestStatus.listGroup
+        
+        groupsRequests.getGroupList(expectedResponse.Successful)
+        cy.deleteAllGroups()
+
+        groupsRequests.getGroupList(expectedResponse.DontExist)
+
 
 
     })

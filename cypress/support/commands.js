@@ -8,7 +8,11 @@
 // https://on.cypress.io/custom-commands
 // ***********************************************
 //
+
+import groupsRequests from "../Requests/groupsRequests";
+
 //
+
 Cypress.Commands.add('dateTime', () => {
     var today = new Date();
     var date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
@@ -62,6 +66,19 @@ Cypress.Commands.add('AssertListRequsition', (expectedStatus,response) => {
     
     cy.requestLog(`status: ${response.status}`)
 })
+
+
+Cypress.Commands.add('deleteAllGroups', () => {
+
+    cy.readFile('cypress/fixtures/groupListSave.json').then(groupListJson =>{
+        groupListJson.forEach(function(group){
+            groupsRequests.cleanGroups(group)
+        })
+     
+    })
+})
+
+
 //
 //
 // -- This is a child command --
