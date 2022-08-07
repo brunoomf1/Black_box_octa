@@ -8,7 +8,7 @@ import requestStatus from "../fixtures/Groups/groupRequestStatus.json"
 describe("Group listing", function(){
 
 
-    it('[+] Correctly list the created group', function(){
+    it('[+] Correctly list the created groups', function(){
         const groupData = groupsData.CorrectData
         const expectedResponse = requestStatus.listGroup.Successful
 
