@@ -1,7 +1,6 @@
 
 ### Plano de Testes 
-https://miro.com/app/board/uXjVOglI46M=/?share_link_id=940799829671
-
+https://miro.com/app/board/uXjVOglI46M=/?share_link_id=494415840649
 
 ### API DOCS
 http://teste-qa-95b5bac5.octax.co:8003/docs#/
