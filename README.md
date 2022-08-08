@@ -1,3 +1,4 @@
+### Para rodar os testes é necessário clonar o repositório e, via terminal na passa raiz, rodar o comando npx cypress open (para abrir em tela) ou npx cypress run (rodar no terminal)
 
 ### Plano de Testes 
 https://miro.com/app/board/uXjVOglI46M=/?share_link_id=494415840649
