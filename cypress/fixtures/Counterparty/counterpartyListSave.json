@@ -1,0 +1,10 @@
+[
+  {
+    "counterparty_name": "counterparty name",
+    "cnpj": "00000000000000",
+    "product_type": 1,
+    "automatic_flow": true,
+    "daily_limit": 10,
+    "group_name": "group's name"
+  }
+]

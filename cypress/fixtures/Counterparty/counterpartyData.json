@@ -1,0 +1,465 @@
+{   
+    "CorrectData" : [
+        {
+            "test" : "Todos os dados corretos",
+            "data" :{
+                "counterparty_name": "counterparty name",
+                "cnpj": "11111111111111",
+                "product_type": 1,
+                "automatic_flow": true,
+                "daily_limit": 10.0,
+                "group_name": "group's name"
+            }
+        },
+        { 
+            "test" : "Todos os dados corretos sem limite",
+            "data" :{
+                "counterparty_name": "counterparty name",
+                "cnpj": "11111111111112",
+                "product_type": 1,
+                "automatic_flow": true,
+                "group_name": "group's name2"
+            }
+        },
+        {
+            "test" : "Todos os dados corretos sem grupo",
+            "data" :{
+                "counterparty_name": "counterparty name",
+                "cnpj": "11111111111113",
+                "product_type": 1,
+                "automatic_flow": true,
+                "daily_limit": 10.0
+            }
+        },
+        {   
+            "test" : "Todos os dados corretos com fluxo automatico true",
+            "data" :{
+                "counterparty_name": "counterparty name",
+                "cnpj": "11111111111114",
+                "product_type": 1,
+                "automatic_flow": true,
+                "daily_limit": 10.0,
+                "group_name": "group's name"
+            }
+        },
+
+        {   
+            "test" : "Todos os dados corretos fluxo automatico false",
+            "data" :{
+                "counterparty_name": "counterparty name",
+                "cnpj": "11111111111115",
+                "product_type": 1,
+                "automatic_flow": false,
+                "daily_limit": 10.0,
+                "group_name": "group's name"
+            }
+        },
+        {   
+            "test" : "Todos os dados corretos com fluxo automatico true",
+            "data" :{
+                "counterparty_name": "counterparty name",
+                "cnpj": "11111111111116",
+                "product_type": 1,
+                "automatic_flow": true,
+                "daily_limit": 10.0,
+                "group_name": "group's name"
+            }
+        },
+
+        {   
+            "test" : "Todos os dados corretos fluxo automatico false",
+            "data" :{
+                "counterparty_name": "counterparty name",
+                "cnpj": "11111111111117",
+                "product_type": 1,
+                "automatic_flow": false,
+                "daily_limit": 10.0,
+                "group_name": "group's name"
+            }
+        },
+        {   
+            "test" : "Todos os dados corretos com limite = 0",
+            "data" :{
+                "counterparty_name": "counterparty name",
+                "cnpj": "11111111111118",
+                "product_type": 1,
+                "automatic_flow": true,
+                "daily_limit": 0.0,
+                "group_name": "group's name"
+            }
+        },
+
+        {   
+            "test" : "Todos os dados corretos com limite  10.0",
+            "data" :{
+                "counterparty_name": "counterparty name",
+                "cnpj": "11111111111119",
+                "product_type": 1,
+                "automatic_flow": true,
+                "daily_limit": 10.0,
+                "group_name": "group's name"
+            }
+        },
+        {   
+            "test" : "Todos os dados corretos com limite  480000.0",
+            "data" :{
+                "counterparty_name": "counterparty name",
+                "cnpj": "11111111111120",
+                "product_type": 1,
+                "automatic_flow": true,
+                "daily_limit": 480000.0,
+                "group_name": "group's name"
+            }
+        },
+
+        {   
+            "test" : "Todos os dados corretos com tipo 1",
+            "data" :{
+                "counterparty_name": "counterparty name",
+                "cnpj": "11111111111121",
+                "product_type": 1,
+                "automatic_flow": true,
+                "daily_limit": 10.0,
+                "group_name": "group's name"
+            }
+        },
+
+        {   
+            "test" : "Todos os dados corretos com tipo 0",
+            "data" :{
+                "counterparty_name": "counterparty name",
+                "cnpj": "11111111111122",
+                "product_type": 0,
+                "automatic_flow": true,
+                "daily_limit": 10.0,
+                "group_name": "group's name"
+            }
+        }
+        
+    ],
+
+    
+    "Empty" :[
+        { 
+            "test" : "Campo nome da contraparte vazio",
+            "data" :{
+                "cnpj": "11111111111111",
+                "product_type": 1,
+                "automatic_flow": true,
+                "daily_limit": 10.0,
+                "group_name": "group's name"
+            }
+        }, 
+        
+        {   
+            "test" : "CAMPO CNPJ vazio",
+            "data" :{
+                "counterparty_name": "counterparty name",
+                "product_type": 1,
+                "automatic_flow": true,
+                "daily_limit": 10.0,
+                "group_name": "group's name"
+            }
+        },
+        
+        {   
+            "test" : "Fluxo automatico vazio",
+            "data" :{
+                "counterparty_name": "counterparty name",
+                "cnpj": "11111111111111",
+                "product_type": 1,
+                "daily_limit": 10.0,
+                "group_name": "group's name"
+            }
+        },    
+        
+        {   
+            "test" : "campo tipo vazio",
+            "data" :{
+                "counterparty_name": "counterparty name",
+                "cnpj": "11111111111111",
+                "automatic_flow": true,
+                "daily_limit": 10.0,
+                "group_name": "group's name"
+            }
+        }
+    
+    ],
+
+
+    "WrongData":[
+        {
+            "test" : "Campo nome da contraparte com $",
+            "data" :{
+                "counterparty_name": "$EEEE",
+                "cnpj": "11111111111111",
+                "product_type": 1,
+                "automatic_flow": true,
+                "daily_limit": 10.0,
+                "group_name": "group's name"
+            }
+        },
+        {
+            "test" : "Campo nome da contraparte com %",
+            "data" :{
+                "counterparty_name": "%EEEE",
+                "cnpj": "11111111111111",
+                "product_type": 1,
+                "automatic_flow": true,
+                "daily_limit": 10.0,
+                "group_name": "group's name"
+            }
+        },
+
+        {
+            "test" : "Campo nome da contraparte com % e $",
+            "data" :{
+            "counterparty_name": "$%EEEE",
+            "cnpj": "11111111111111",
+            "product_type": 1,
+            "automatic_flow": true,
+            "daily_limit": 10.0,
+            "group_name": "group's name"
+            }
+        },
+
+
+        {   
+            "test" : "valor igual a 2",
+            "data" :{
+                "counterparty_name": "counterparty name",
+                "cnpj": "11111111111111",
+                "product_type": 2,
+                "automatic_flow": true,
+                "daily_limit": 10.0,
+                "group_name": "group's name"
+            }
+        },
+
+        {   
+            "test" : "valor igual a -1",
+            "data" :{
+                "counterparty_name": "counterparty name",
+                "cnpj": "11111111111111",
+                "product_type": -1,
+                "automatic_flow": true,
+                "daily_limit": 10.0,
+                "group_name": "group's name"
+            }
+        },
+        {
+            "test" : "Daily Limit maior que 480.000,00 ",
+            "data" :{
+                "counterparty_name": "counterparty name",
+                "cnpj": "11111111111112",
+                "product_type": 1,
+                "automatic_flow": true,
+                "daily_limit": 500000.00,
+                "group_name": "group's name"
+            }
+        }, 
+        {
+            "test" : "Daily Limit menor que 0",
+            "data" :{
+                "counterparty_name": "counterparty name",
+                "cnpj": "11111111111112",
+                "product_type": 1,
+                "automatic_flow": true,
+                "daily_limit": -1,
+                "group_name": "group's name"
+            }
+        }
+
+    ],
+
+
+    "Validation" :[
+
+        {
+            "test" : "Campo nome da contraparte com booleano",
+            "data" :{
+                "counterparty_name": true,
+                "cnpj": "11111111111111",
+                "product_type": 1,
+                "automatic_flow": true,
+                "daily_limit": 10.0,
+                "group_name": "group's name"
+                }
+        },
+
+        {
+            "test" : "CAMPO CNPJ com menos que 14 caracteres",
+            "data" :{
+                "counterparty_name": "counterparty name",
+                "cnpj": "1111111111112",
+                "product_type": 1,
+                 "automatic_flow": true,
+                "daily_limit": 10.0,
+                "group_name": "group's name"
+                }
+        },
+    
+        {
+            "test" : "CAMPO CNPJ com mais que 14 caracteres",
+            "data" :{
+                "counterparty_name": "counterparty name",
+                "cnpj": "111111111111113",
+                "product_type": 1,
+                "automatic_flow": true,
+                "daily_limit": 10.0,
+                "group_name": "group's name"
+            }
+        },
+        {  
+            "test" : "CAMPO CNPJ com booleano",
+            "data" :{            
+                "counterparty_name": "counterparty name",
+                "cnpj": true,
+                "product_type": 1,
+                "automatic_flow": true,
+                "daily_limit": 10.0,
+                "group_name": "group's name"
+            }
+        },
+
+        {  
+            "test" : "CAMPO CNPJ com int",
+            "data" :{            
+                "counterparty_name": "counterparty name",
+                "cnpj": 12345678901234,
+                "product_type": 1,
+                "automatic_flow": true,
+                "daily_limit": 10.0,
+                "group_name": "group's name"
+            }
+        },
+        {   
+            "test" : "Fluxo automatico int",
+            "data" :{
+                "counterparty_name": "counterparty name",
+                "cnpj": "11111111111114",
+                "product_type": 1,
+                "automatic_flow": 1,
+                "daily_limit": 10.0,
+                "group_name": "group's name"
+            }
+        },
+        {   
+            "test" : "Fluxo automatico string",
+            "data" :{
+                "counterparty_name": "counterparty name",
+                "cnpj": "11111111111115",
+                "product_type": 1,
+                "automatic_flow": "false",
+                "daily_limit": 10.0,
+                "group_name": "group's name"
+            }
+        },
+        {
+            "test" : "grupo é booleano",
+            "data" :{
+                "counterparty_name": "counterparty name",
+                "cnpj": "11111111111116",
+                "product_type": 1,
+                "automatic_flow": true,
+                "daily_limit": 10.0,
+                "group_name": true
+            }
+        },
+
+        {
+            "test" : "grupo é int",
+            "data" :{
+                "counterparty_name": "counterparty name",
+                "cnpj": "11111111111117",
+                "product_type": 1,
+                "automatic_flow": true,
+                "daily_limit": 10.0,
+                "group_name": true
+            }
+        },
+        {   
+            "test" : "limite é int",
+            "data" :{
+                "counterparty_name": "counterparty name",
+                "cnpj": "11111111111118",
+                "product_type": 1,
+                "automatic_flow": true,
+                "daily_limit": 10,
+                "group_name": "group's name"
+            }
+        },
+        {   
+            "test" : "Limite é string",
+            "data" :{
+                "counterparty_name": "counterparty name",
+                "cnpj": "11111111111119",
+                "product_type": 1,
+                "automatic_flow": true,
+                "daily_limit": "480000.0",
+                "group_name": "group's name"
+            }
+        },
+        {   
+            "test" : "Limite é booleano",
+            "data" :{
+                "counterparty_name": "counterparty name",
+                "cnpj": "11111111111120",
+                "product_type": 1,
+                "automatic_flow": true,
+                "daily_limit": true,
+                "group_name": "group's name"
+            }
+        },
+        {   
+            "test" : "tipo de dado booleano",
+            "data" :{
+                "counterparty_name": "counterparty name",
+                "cnpj": "11111111111121",
+                "product_type": true,
+                "automatic_flow": true,
+                "daily_limit": 10.0,
+                "group_name": "group's name"
+            }
+        },
+
+        {   
+            "test" : "Tipo de dado float",
+            "data" :{
+                "counterparty_name": "counterparty name",
+                "cnpj": "11111111111122",
+                "product_type": 1.0,
+                "automatic_flow": true,
+                "daily_limit": 10.0,
+                "group_name": "group's name"
+            }
+        },
+
+        {   
+            "test" : "Tipo de dado string",
+            "data" :{
+                "counterparty_name": "counterparty name",
+                "cnpj": "11111111111123",
+                "product_type": "1",
+                "automatic_flow": true,
+                "daily_limit": 10.0,
+                "group_name": "group's name"
+            }
+        }
+
+    ],
+
+    "duplicated" : {
+        "test" : "Todos os dados corretos criar duplicada",
+        "data" :{
+            "counterparty_name": "counterparty name",
+            "cnpj": "11111111111111",
+            "product_type": 1,
+            "automatic_flow": true,
+            "daily_limit": 10.0,
+            "group_name": "group's name"
+            }
+        }
+
+
+}

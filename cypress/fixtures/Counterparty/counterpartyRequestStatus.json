@@ -1,0 +1,54 @@
+{  
+    "createCounterparty" : {
+        "Successful": {
+            "code" : 200,
+            "message" : "Contraparte adicionada com sucesso"
+        },
+
+        "Validation" : {
+            "code" : 422
+        },
+
+        "WrongData" : {
+            "code" : 400       
+        },
+
+        "Empty":{
+            "code" : 400
+        },
+        "duplicated":{
+            "code" : 400
+        }
+
+
+
+    },
+
+    "deleteCounterparty" : {
+       "Successful": {
+            "code" : 200,
+            "message": "Contraparte deletado"
+        },
+
+        "DontExist":{
+            "code" : 400,
+            "message" : "Contraparte não cadastrado"
+        },
+
+        "Validation": {
+            "code" : 440,
+            "message" : "Bad request message"
+        } 
+    },
+
+    "listGroup" : {
+        "Successful": {
+             "code" : 200
+         },
+ 
+         "DontExist": {
+             "code" : 400
+         } 
+     }
+
+}

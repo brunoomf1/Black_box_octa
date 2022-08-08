@@ -27,7 +27,6 @@ describe("Group listing", function(){
 
     it('[-] List a deleted group', function(){
 
-        const groupData = groupsData.CorrectData
         const expectedResponse = requestStatus.listGroup.DontExist
 
         const group = 'Grupo Teste'
