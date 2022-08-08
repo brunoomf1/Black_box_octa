@@ -7,7 +7,7 @@ import requestStatus from "../fixtures/Groups/groupRequestStatus.json"
 describe("Group listing", function(){
 
 
-    it('[+] Correctly list the created groups', function(){
+    it('[+] Listar grupos corretamente', function(){
         const groupData = groupsData.CorrectData
         const expectedResponse = requestStatus.listGroup.Successful
 
@@ -25,7 +25,7 @@ describe("Group listing", function(){
         })
     })
 
-    it('[-] List a deleted group', function(){
+    it('[-] Listar um grupo deletado', function(){
 
         const expectedResponse = requestStatus.listGroup.DontExist
 
@@ -41,7 +41,7 @@ describe("Group listing", function(){
 
     })
 
-    it('[-] List when there are no groups', function(){
+    it('[-] Listar quando não há grupos', function(){
 
         const expectedResponse = requestStatus.listGroup
         

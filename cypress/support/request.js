@@ -1,3 +1,6 @@
+//Requisições enviadas para a API
+
+//CRIAR UM GRUPO E VERIFICAR A RESPOSTA
 Cypress.Commands.add('createGroup',(groupName,expectedResponse) =>{
     cy.request({
         method: 'POST',
@@ -9,7 +12,7 @@ Cypress.Commands.add('createGroup',(groupName,expectedResponse) =>{
     })
 })
 
-
+//PEGA A LISTA DE GRUPOS, CHECA A RESPOSTA E SALVA EM UM JSON
 Cypress.Commands.add('getGroupList',(expectedResponse) =>{
     cy.request({
         method: 'GET',
@@ -22,6 +25,7 @@ Cypress.Commands.add('getGroupList',(expectedResponse) =>{
    
 })
 
+//PEGA A LISTA DE GRUPOS E SALVA EM UM JSON
 Cypress.Commands.add('getGroupListToDelete',() =>{
     cy.request({
         method: 'GET',
@@ -33,7 +37,7 @@ Cypress.Commands.add('getGroupListToDelete',() =>{
    
 })
 
-
+//DELETA UM GRUPO E CHECA A RESPSOTA
 Cypress.Commands.add('deleteGroup',(groupName,expectedResponse) =>{
     cy.request({
         method: 'DELETE',
@@ -45,6 +49,7 @@ Cypress.Commands.add('deleteGroup',(groupName,expectedResponse) =>{
      })
 })
 
+//DELTA UM GRUPO CRIADO
 Cypress.Commands.add('cleanGroups',(groupName) =>{
     cy.request({
         method: 'DELETE',
@@ -53,6 +58,7 @@ Cypress.Commands.add('cleanGroups',(groupName) =>{
     })
 })
 
+//CRIA UM NOVO GRUPO
 Cypress.Commands.add('populateGroups',(groupName) =>{
     cy.request({
         method: 'POST',
@@ -61,8 +67,10 @@ Cypress.Commands.add('populateGroups',(groupName) =>{
     })
 })
 
+
 //Counterparty -----------------------------
 
+//CRIA UMA CONTRAPARTE E VERIFICA A RESPOSTA
 Cypress.Commands.add('createCounterparty',(counterpartyData,expectedResponse) =>{
     cy.request({
         method: 'POST',
@@ -82,6 +90,7 @@ Cypress.Commands.add('createCounterparty',(counterpartyData,expectedResponse) =>
     })
 })
 
+//ATUALIZA UMA CONTRAPARTE E VERIFICA A RESPOSTA
 Cypress.Commands.add('updateCounterparty',(counterpartyData,expectedResponse) =>{
     cy.request({
         method: 'PUT',
@@ -101,6 +110,7 @@ Cypress.Commands.add('updateCounterparty',(counterpartyData,expectedResponse) =>
     })
 })
 
+//DELETA UMA CONTRAPARTE PELO CNJP E VERIFICA A RESPOSTA
 Cypress.Commands.add('deleteCounterparty',(counterpartyCNPJ,expectedResponse) =>{
     cy.request({
         method: 'DELETE',
@@ -112,6 +122,7 @@ Cypress.Commands.add('deleteCounterparty',(counterpartyCNPJ,expectedResponse) =>
      })
 })
 
+//PEGA UMA LISTA DE CONTRAPARTES, SALVA EM JSON E CHECA A RESPOSTA
 Cypress.Commands.add('getCounterpartyList',(expectedResponse) =>{
     cy.request({
         method: 'GET',
@@ -124,6 +135,7 @@ Cypress.Commands.add('getCounterpartyList',(expectedResponse) =>{
    
 })
 
+//PEGA UMA LISTA DE CONTRAPARTES, SALVA EM JSON
 Cypress.Commands.add('getCounterpartyListToDelete',() =>{
     cy.request({
         method: 'GET',
@@ -135,6 +147,7 @@ Cypress.Commands.add('getCounterpartyListToDelete',() =>{
    
 })
 
+//CRIA UMA CONTRAPARTE
 Cypress.Commands.add('populateCounterparty',(counterpartyData) =>{
     cy.request({
         method: 'POST',
@@ -150,6 +163,8 @@ Cypress.Commands.add('populateCounterparty',(counterpartyData) =>{
         failOnStatusCode: false     
     })
 })
+
+//DELETA UMA CONTRAPARTE
 Cypress.Commands.add('cleanCounterparty',(counterpartyCNPJ) =>{
         cy.request({
             method: 'DELETE',

@@ -10,6 +10,7 @@
 //
 //
 
+// PEGA A DATA E A HORA DO SISTEMA
 Cypress.Commands.add('dateTime', () => {
     var today = new Date();
     var date = (today.getDate()+'-'+(today.getMonth()+1)+'-'+today.getFullYear());
@@ -18,12 +19,14 @@ Cypress.Commands.add('dateTime', () => {
     return dateTime
 })
 
+//CRIA LOG NO ARQUIVO log.txt DE UM TEXTO E DA HORA.
 Cypress.Commands.add('requestLog', (text) => {
     cy.dateTime().then(dateTime => {
         cy.writeFile('cypress/support/logs.txt',`${text} -- ${dateTime} \n`, { flag: 'a+' })
     })
 })
 
+//CHECA A RESPOSTA DA REQUISIÇÃO E ENVIA O LOG PARA SER SALVO.
 Cypress.Commands.add('AssertRequsition', (expectedStatus,response) => {
     
     const jsonbody = response.body
@@ -34,6 +37,7 @@ Cypress.Commands.add('AssertRequsition', (expectedStatus,response) => {
     
 })
 
+//CHECA SE UM GRUPO EXISTE EM UMA LISTA DE GRUPOS
 Cypress.Commands.add('groupExistsInList', (expectedItem,assert) => {
 
     cy.readFile('cypress/fixtures/Groups/groupListSave.json').then(groupListJson =>{
@@ -48,6 +52,7 @@ Cypress.Commands.add('groupExistsInList', (expectedItem,assert) => {
     })
 })
 
+// CHECA SE UMA CONTRAPARTE EXISTE EM UMA LISTA
 Cypress.Commands.add('counterpartyExistsInList', (expectedItem,assert) => {
 
     cy.readFile('cypress/fixtures/Counterparty/counterpartyListSave.json').then(ListJson =>{
@@ -62,6 +67,7 @@ Cypress.Commands.add('counterpartyExistsInList', (expectedItem,assert) => {
     })
 })
 
+//CHECA AS RESPSOTA DAS REQUISIÇÕES DE UMA LISTA E SE A LISTA NÃO ESTÁ VAZIA
 Cypress.Commands.add('AssertListRequsition', (expectedStatus,response) => {
     
     expect(response.status).to.eq(expectedStatus.code)
@@ -70,6 +76,7 @@ Cypress.Commands.add('AssertListRequsition', (expectedStatus,response) => {
     cy.requestLog(`Responsestatus: ${JSON.stringify(response.status)}|Expectedstatus: ${JSON.stringify(expectedStatus.code)} --- message ${JSON.stringify(response.body.message)}`)
 })
 
+//DELETA TODOS OS GRUPOS EXISTENTES NECESSARIO LISTAR OS GRUPOS ANTES
 Cypress.Commands.add('deleteAllGroups', () => {
 
     cy.readFile('cypress/fixtures/Groups/groupListSave.json').then(groupListJson =>{
@@ -80,6 +87,7 @@ Cypress.Commands.add('deleteAllGroups', () => {
     })
 })
 
+//DELETA TODOS AS CONTRAPARTE EXISTENTES NECESSARIO LISTAR AS CONTRAPARTE ANTES
 Cypress.Commands.add('deleteAllCounterpartys', () => {
 
     cy.readFile('cypress/fixtures/Counterparty/counterpartyListSave.json').then(groupListJson =>{

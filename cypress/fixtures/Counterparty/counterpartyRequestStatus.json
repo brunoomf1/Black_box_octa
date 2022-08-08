@@ -41,7 +41,7 @@
         } 
     },
 
-    "listGroup" : {
+    "listCounterparty" : {
         "Successful": {
              "code" : 200
          },
