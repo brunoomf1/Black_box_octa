@@ -2,7 +2,7 @@
 
 ### É possivel rodar os testes via github Actions ([Link](https://github.com/brunoomf1/Black_box_octa/actions)) abrindo o ultimo workflow executado e clicando em "Re-run jobs" > "Re-run all jobs"
 
-### O código de automação se encontra no diretório cy
+### O código de automação se encontra no diretório cypress
 
 ### Plano de Testes 
 https://miro.com/app/board/uXjVOglI46M=/?share_link_id=494415840649
